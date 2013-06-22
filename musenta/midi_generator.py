@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+from sys import argv
+
+num = argv[1]
+
 def list_to_strln(input_list):
     output_str = str(input_list)
     output_str = output_str[1:(len(output_str) - 1)] + '\n'
@@ -10,14 +14,14 @@ def list_to_strln(input_list):
 atom_note = 8
 
 #   Read in melody as a sequence of atom notes
-sequence = [int(float(line)) for line in open('multistep_output_10.txt')]
+sequence = [int(float(line)) for line in open('multistep_output_%s.txt' % num)]
 
 clocks_per_QN = 120
 track = 4
 channel = 2
 velocity = 100
 
-write_filename = 'multistep_generated_10.csv'
+write_filename = 'multistep_generated_%s.csv' % num
 f = open(write_filename, 'w')
 
 top_lines = """0, 0, Header, 1, 10, 120
