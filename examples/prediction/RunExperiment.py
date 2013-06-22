@@ -49,8 +49,6 @@ def runExperiment(experimentDirectory, experimentOptions):
 
   experiment = Experiment(path=experimentDirectory, runtimeOptions=experimentOptions)
   
-  
-  
   # Create GUIs as needed
   if not experimentOptions['postProcessOnly']:
     if o['runGUI']:
@@ -93,7 +91,6 @@ def profileRunExperiment(*args, **keywords):
       locals=dict(args=args, keywords=keywords),
       filename="re.profile"
     )
-
 
 def usage(parser, message):
   print parser.get_usage()

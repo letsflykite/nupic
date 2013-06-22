@@ -130,10 +130,10 @@ config = {
                 fieldname = 'pitch',
                 name = 'pitch',
                 type = 'ScalarEncoder',
-                minval = 0,
-                maxval = 255,
-                w = 3,
-                resolution = 1
+                minval = 55,
+                maxval = 72,
+                w = 15,
+                n = 51
               )
             },
 
@@ -306,7 +306,9 @@ config = {
 
         'trainSPNetOnlyIfRequested': False,
     },
-  'predictionSteps': range(1, 160),
+          
+  
+  'predictionSteps': range(1, 161),
   'predictedField': 'pitch',
   'dataSource': 'fillInBySubExperiment',
 }
