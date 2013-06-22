@@ -7,12 +7,15 @@ from nupic.frameworks.opf.modelfactory import ModelFactory
 
 import description
 
+numLearningSteps = 1600
+numStepsToPredict = 160
+
 def createModel():
   return ModelFactory.create(description.config)
 
 def run():
   model = createModel()
-  model.enableInference({'predictionSteps': range(5),
+  model.enableInference({'predictionSteps': range(1, 160),
                          'predictedField': 'pitch'})
   with open ('legdam10_parsed.txt') as fin:
     reader = csv.reader(fin)
@@ -20,7 +23,11 @@ def run():
     print headers
     print reader.next()
     print reader.next()
-    for record in reader:
+    for i, record in enumerate(reader):
+      if i == numLearningSteps:
+        print result
+        import pdb; pdb.set_trace()
+        break
       print record
       modelInput = dict(zip(headers, record))
       modelInput["pitch"] = float(modelInput["pitch"])

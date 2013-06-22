@@ -306,10 +306,8 @@ config = {
 
         'trainSPNetOnlyIfRequested': False,
     },
-          
-  
-  'predictionSteps': [1],
-  'predictedField': 'field1',
+  'predictionSteps': range(1, 160),
+  'predictedField': 'pitch',
   'dataSource': 'fillInBySubExperiment',
 }
 # end of config dictionary
