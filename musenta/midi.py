@@ -5,10 +5,10 @@ import datetime
 
 from nupic.frameworks.opf.modelfactory import ModelFactory
 
-import base_description
+import description
 
 def createModel():
-  return ModelFactory.create(base_description.config)
+  return ModelFactory.create(description.config)
 
 def run():
   model = createModel()
