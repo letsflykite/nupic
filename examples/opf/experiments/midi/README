@@ -1,0 +1,12 @@
+In this example, a midi sequence is fed to a CLA a fixed number of times, after
+which the CLA is asked to make a multi-step prediction $SONG_LENGTH steps
+ahead. We investigate how the number of times the sequence is fed into the CLA
+affects the sequence predicted.
+
+To generate sequences:
+
+0. Turn midi into csv using midicsv.
+1. Generate CLA sequence data from midi csv using midi_parser.py
+2. Generate set of predicted midi song sequences by running "python midi.py"
+3. Turn midi sequence files into midi csv files.
+4. Turn midi csv files into midi using csvmidi. 
